@@ -1,0 +1,40 @@
+/* You can add global styles to/*body{
+    
+    margin-top: 10%;
+    background-image: url("https://media0.giphy.com/media/JetkGHNkWrSjKeBNub/200w.gif?cid=82a1493b8k8kyb5fz7ch4a2vk26a31asdymb088texq5sq8u&ep=v1_gifs_related&rid=200w.gif&ct=g");
+     background-size: cover;
+     background-position: center;
+     background-repeat: no-repeat;
+    transform: rotate(deg);
+ 
+} this file, and also import other style files */
+
+
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+  }
+  
+
+  body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('https://media0.giphy.com/media/JetkGHNkWrSjKeBNub/200w.gif?cid=82a1493b8k8kyb5fz7ch4a2vk26a31asdymb088texq5sq8u&ep=v1_gifs_related&rid=200w.gif&ct=g');
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1; 
+    transform: rotate(180deg) scaleX(-1); 
+    transform-origin: center center; 
+    height: 100%; 
+    width: 100%;  
+    pointer-events: none; 
+  }

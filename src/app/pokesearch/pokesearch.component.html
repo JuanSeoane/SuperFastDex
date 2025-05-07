@@ -1,0 +1,110 @@
+<h1 onclick="window.location.reload();" id="Tittle">FastDex</h1><img id="bolt"
+    src="https://png.pngtree.com/png-vector/20221022/ourmid/pngtree-lightning-bolt-icon-thunder-and-flash-png-image_6384267.png">
+<div>
+    <div id="stats">
+        <h4 id="ltext">Stats </h4>
+
+        @if (pokemon()) {
+        @for(stat of pokemon().stats;track $index){
+        <ngb-progressbar class="m-2" [type]="getProgressBarType(stat.base_stat)" textType="white"
+            [value]="stat.base_stat/2">{{stat.stat.name}}: {{stat.base_stat}}</ngb-progressbar>
+        }
+        }
+
+    </div>
+    <form (ngSubmit)="pokesearch()">
+        <input placeholder="Nombre del Pokemon" name="Buscador" type="search" id="search" [(ngModel)]="search"><button type="submit">Buscar</button>
+    </form>
+</div>
+
+<div id="Bgpoke" onclick="">
+    @if (pokemon()) {
+    <img [src]="pokemon().sprites.other.showdown.front_default || pokemon().sprites.front_default">
+    }
+</div>
+
+<div id="Neutral">
+    <h5 style="text-align: center;">Immunity x0</h5>
+    <ul>
+
+        
+        <li>{{noDamage}}</li>
+
+        
+    </ul>
+</div>
+<div id="Weaknes">
+    <h5 style="text-align: center;">Resistance x1/2</h5>
+    <ul>
+        
+            <li>{{halfDamage}}</li>
+    
+            
+    </ul>
+</div>
+<div id="SuperEfect">
+    <h5 style="text-align: center;">Weakness x2</h5>
+    <ul style="display: flex;">
+
+            <li >{{doubleDamage}}</li>
+    
+            
+
+    </ul>
+</div>
+<div id="Abilities">
+    <h4 style="text-align: center;">Abilities</h4>
+    <select [(ngModel)]="selectedAbility" (change)="abilitysearch()" style="margin-left: 100px;margin-top: 10px;"
+        placeholder="(Movimientos)">
+        @if (pokemon()) {
+        @for (abilit of pokemon().abilities; track $index) {
+        <option [value]="abilit.ability.name">{{abilit.ability.name}}.</option>
+        }}
+
+
+    </select>
+    <p id="effectAbili"
+        style="margin-left: 5%;width: fit-content;background-color: rgba(0, 0, 0, 0.708);color: white;border-radius: 20px;padding: 10px;width: 90%;margin-top: 5%;">
+        {{ selectedAbility }}</p>
+</div>
+<div id="Moves">
+    <h4 style="text-align: center;">Known Moves</h4>
+    <select [(ngModel)]="selectedMove" (change)="movesearch()" style="margin-left: 75px;margin-top: 10px;"
+        placeholder="(Movimientos)">
+        @if(pokemon()){
+        @for (move of pokemon().moves; track $index) {
+
+        <option>{{move.move.name}}</option>
+        }
+
+        }
+
+
+    </select>
+    <ul style="display: flex;">
+        <li style="margin:auto;">Type:<br><span style="border-radius: 10px;font-size: 18px;"
+                [ngStyle]="{'background-color':moveTypeStyle.color}"> {{ moveTypeStyle.icon }} {{ moveType }}</span>
+        </li>
+        <li style="margin:auto;">power:<br><span>{{ movePower}}</span> </li>
+        <li style="margin:auto;">@if (moveCat){<img [src]="moveCat" style="width: 40px;height: 50px;">}</li>
+    </ul>
+    <p id="effectMove"
+        style="margin-left: 5%;width: 90%;margin-top: 5%;background-color: rgba(0, 0, 0, 0.708);color: white;border-radius: 20px;padding: 10px;">
+        {{shortEffect}}</p>
+
+
+</div>
+<table id="Tipos">
+    @if (pokemon()) {
+    @for (tipo of pokemon().types; track $index) {
+    <tr>
+        <td><span class="tipo-pill" [ngStyle]="{'background-color': getTipoStyle(tipo.type.name).color}">
+
+                {{ getTipoStyle(tipo.type.name).icon }} {{ tipo.type.name}}
+
+            </span></td>
+    </tr>
+
+    }
+    }
+</table>

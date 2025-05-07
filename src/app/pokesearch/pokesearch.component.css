@@ -1,0 +1,173 @@
+input {
+    position: absolute;
+    top: 20%;
+    left: 39%;
+    border-radius: 20px;
+    height: 5%;
+    border-color: red;
+}
+
+button {
+    position: absolute;
+    top: 20%;
+    left: 54%;
+    height: 5%;
+    border-radius: 30px;
+    background-color: lightgray;
+    transition: background-image 3s ease 3s;
+}
+
+button:hover {
+    cursor: pointer;
+    background-image: linear-gradient(to bottom right, red, rgba(97, 88, 88, 0.79), rgb(241, 241, 241));
+
+
+}
+
+img {
+
+    top: 35%;
+    left: 43%;
+    width: 150%;
+    z-index: 2;
+}
+
+#Bgpoke {
+    position: absolute;
+    top: 30%;
+    left: 40%;
+    width: max-content;
+
+    background-image: url("https://cdn2.iconfinder.com/data/icons/daily-1/50/pokeball-512.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding: 100px;
+
+}
+
+#Tittle {
+    position: absolute;
+    left: 41%;
+    border-radius: 20px;
+    width: fit-content;
+    text-align: center;
+    height: 50px;
+    top: 2%;
+    font-family: Arial, Helvetica, sans-serif;
+    cursor: pointer;
+}
+
+#bolt {
+    width: 50px;
+    position: absolute;
+    left: 52%;
+    top: 2%;
+    border-color: black;
+    border: 5px;
+}
+
+#stats {
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    background-color: rgba(0, 128, 122, 0.662);
+    width: 350px;
+    height: 180px;
+    list-style-type: none;
+    border-radius: 15px;
+   
+}
+ul {
+    list-style-type: none;
+}
+
+#Weaknes {
+    position: absolute;
+    top: 43%;
+    left: 5%;
+    background-color:rgba(255, 0, 0, 0.751);
+    width: 300px;
+    border-radius: 10px;
+}
+#Weaknes > ul{
+    background-color: rgba(255, 102, 102, 0.598);
+    border-top-right-radius: 10px;
+    border-bottom-right-radius:10px ;
+    margin-right: 2%;
+    width: fit-content;
+
+}
+
+#Neutral {
+    position: absolute;
+    top: 60%;
+    left: 5%;
+    border-radius: 10px;
+    background-color:rgba(109, 103, 103, 0.751);
+    width: 300px;
+}
+#Neutral > ul{
+    background-color: rgba(240, 248, 255, 0.445);
+    border-top-right-radius: 10px;
+    border-bottom-right-radius:10px ;
+    
+    width: fit-content;
+}
+#SuperEfect {
+    position: absolute;
+    top: 75%;
+    left: 5%;
+    border-radius: 10px; 
+    background-color: rgba(221, 255, 0, 0.751);
+    width: 300px;
+}
+#SuperEfect > ul{
+    background-color: rgba(71, 72, 1, 0.422);
+    border-top-right-radius: 10px;
+    border-bottom-right-radius:10px ;
+    margin-right: 2%;
+    width: fit-content;
+}
+#Moves {
+    position: absolute;
+    top: 50%;
+    left: 65%;
+    background-color: rgba(253, 0, 0, 0.192);
+    width: 300px;
+    height: 250px;
+    border-radius: 20px;
+}
+
+#Abilities {
+    position: absolute;
+    top: 5%;
+    left: 65%;
+    background-color: rgba(255, 162, 0, 0.751);
+    width: 300px;
+    height: 250px;
+    border-radius: 20px;
+}
+
+#Tipos {
+    position: absolute;
+    top: 75%;
+    left: 40%;
+    background-color: transparent;
+    display: flex;
+
+}
+
+#Tipos>tr {
+    padding: 10px;
+    margin-right: 5px;
+}
+#ltext{
+    text-align: center;
+}
+.tipo-pill {
+
+    border-radius: 15px;
+
+    padding: 8px ;
+
+}
